@@ -58,12 +58,11 @@ body {
   font-size: var(--fs-500);
 }
 
-.price > span {
+.price > s {
   align-self: center;
   font-family: var(--montserrat);
   font-size: var(--fs-200);
   color: var(--color-gray);
-  text-decoration-line: line-through;
 }
 
 .btn {
