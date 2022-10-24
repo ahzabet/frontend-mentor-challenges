@@ -1,0 +1,127 @@
+:root {
+  /* Font-family */
+  --fm: "Kumbh Sans", sans-serif;
+
+  /* Font-weights */
+  --fw-700: 700;
+  --fw-400: 400;
+
+  /* Font-sizes */
+  --fs-500: 1.125rem; /* 18px */
+  --fs-300: 0.875rem; /*14px */
+  --fs-200: 0.625rem; /* 10xp */
+
+  /* Colors */
+  --color-dark-cyan: hsl(185, 75%, 39%);
+  --color-dark-blue: hsl(229, 23%, 23%);
+  --color-dark-grayish-blue: hsl(227, 10%, 46%);
+  --color-dark-gray: hsl(0, 0%, 59%);
+  --color-white: hsla(0, 0%, 100%);
+  --color-line: hsla(228, 9%, 92%, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--fm);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-500);
+
+  background-color: var(--color-dark-cyan);
+  color: var(--color-dark-grayish-blue);
+
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat no-repeat;
+  background-position: bottom 50vh right 50vw, top 50vh left 50vw;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 21.875rem;
+  aspect-ratio: 1 / calc(374 / 350);
+
+  background-color: var(--color-white);
+  border-radius: 0.938rem;
+  background-image: url(./images/bg-pattern-card.svg);
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  border-radius: 50%;
+  border: 0.313rem solid var(--color-white);
+  width: 6rem;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.813rem;
+  margin: 1.5rem 0;
+}
+
+.name {
+  font-weight: var(--fw-700);
+  color: var(--color-dark-blue);
+  margin-right: 0.531rem;
+}
+
+.city {
+  font-size: var(--fs-300);
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--color-line);
+  margin: 0;
+}
+
+.card-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+
+  margin: 1.5rem 0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.563rem;
+
+  font-weight: var(--fw-700);
+  color: var(--color-dark-blue);
+}
+
+.stats-description {
+  font-weight: var(--fw-400);
+  font-size: var(--fs-200);
+  color: var(--color-dark-gray);
+  letter-spacing: 1.5px;
+}
