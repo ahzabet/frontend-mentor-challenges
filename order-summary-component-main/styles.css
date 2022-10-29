@@ -1,0 +1,238 @@
+:root {
+  /* Font-family */
+  --fm: "Red Hat Display", sans-serif;
+
+  /* Font-weights */
+  --fw-900: 900;
+  --fw-700: 700;
+  --fw-500: 500;
+
+  /* Font-sizes */
+  --fs-600: 1.75rem; /* 28px */
+  --fs-500: 1.375rem; /* 22px */
+  --fs-400: 1rem; /* 16px */
+  --fs-300: 0.938rem; /* 15px */
+  --fs-200: 0.875rem; /* 14px */
+  --fs-100: 0.813rem; /* 13px */
+
+  /* Colors */
+  --color-pale-blue: hsl(225, 100%, 94%);
+  --color-black: hsl(223, 46%, 23%);
+  --color-purple: hsl(245, 75%, 52%);
+  --color-gray: hsl(223, 23%, 55%);
+  --color-hover: hsl(245, 83%, 68%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--fm);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-300);
+
+  color: var(--color-gray);
+  background-color: var(--color-pale-blue);
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+button {
+  border: 0;
+  padding: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.card {
+  max-width: 20.438rem;
+  aspect-ratio: 1 / calc(35.438 / 20.438);
+
+  background-color: white;
+  border-radius: 1.25rem;
+  box-shadow: 0 2.5rem 2.5rem hsla(228, 87%, 39%, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card > img {
+  width: 100%;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.summary {
+  padding: 0 1.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary > h2 {
+  font-weight: var(--fw-900);
+  font-size: var(--fs-500);
+  color: var(--color-black);
+}
+
+.summary > p {
+  text-align: center;
+  line-height: 1.563rem;
+  padding: 1rem 0 1.5rem;
+}
+
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  background-color: hsl(228 100% 99%);
+  border-radius: 0.688rem;
+
+  padding: 1rem;
+}
+
+.plan > :first-child {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.plan__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.188rem;
+}
+
+.plan__details > p:nth-child(1) {
+  font-weight: var(--fw-900);
+  font-size: var(--fs-200);
+  color: var(--color-black);
+}
+
+.plan__details > p:nth-child(2) {
+  font-size: var(--fs-200);
+}
+
+.plan > a {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-100);
+  color: var(--color-purple);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.938rem 4rem;
+  margin: 1.5rem 0;
+
+  font-weight: var(--fw-900);
+  font-size: inherit;
+
+  color: white;
+  background-color: var(--color-purple);
+  border-radius: 0.688rem;
+  box-shadow: 0 1.25rem 1.25rem hsla(245, 75%, 52%, 0.19);
+
+  cursor: pointer;
+}
+
+.cancel {
+  font-weight: var(--fw-900);
+  color: gray;
+  text-decoration: none;
+}
+
+.plan > a,
+.btn-primary,
+.cancel {
+  transition: all 0.25s;
+}
+
+.plan > a:hover {
+  color: var(--color-hover);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-hover);
+}
+
+.cancel:hover {
+  color: var(--color-black);
+}
+
+/* Media Queries Start */
+
+@media screen and (min-width: 90em) {
+  body {
+    font-size: var(--fs-400);
+  }
+
+  .card {
+    max-width: 28.125rem;
+    aspect-ratio: 1 / calc(43.563 / 28.125);
+  }
+
+  .summary {
+    padding: 0 3rem 3rem;
+  }
+
+  .summary > h2 {
+    font-size: var(--fs-600);
+  }
+
+  .summary > p {
+    line-height: 1.625rem;
+    padding: 1.063rem 0 1.25rem;
+  }
+
+  .plan {
+    padding: 1.5rem;
+  }
+
+  .plan > a {
+    font-size: var(--fs-200);
+  }
+
+  .plan__details {
+    gap: 0.375rem;
+  }
+
+  .plan__details > p:nth-child(1),
+  .plan__details > p:nth-child(2) {
+    font-size: var(--fs-400);
+  }
+
+  .btn-primary {
+    margin: 2rem 0;
+  }
+}
+
+/* Media Queries End */
