@@ -129,6 +129,8 @@ h1 {
 }
 
 .cta {
+  position: relative;
+
   width: 10.438rem;
   aspect-ratio: 1 / calc(3.5 / 10.438);
   border-radius: 1.969rem;
@@ -138,6 +140,24 @@ h1 {
     var(--color-lg-orange),
     var(--color-lg-pink)
   );
+}
+
+.cta::after,
+.btn-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-color: hsl(0 0% 100% / 0.5);
+  border-radius: inherit;
+
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.cta:hover::after,
+.btn-footer:hover::after {
+  opacity: 1;
 }
 
 .grid-container img {
@@ -172,8 +192,13 @@ h2 {
 .card {
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   border: 1px solid hsl(232deg 10% 56% / 25%);
   border-radius: 0.625rem;
+  box-shadow: 0rem 2.5rem 5rem hsla(233, 92%, 29%, 0.04);
 
   padding: 3.5rem 1.75rem 2rem;
 }
@@ -212,6 +237,8 @@ footer {
 }
 
 .btn-footer {
+  position: relative;
+
   background: linear-gradient(
     to bottom,
     var(--color-lg-purple),
@@ -258,6 +285,37 @@ footer {
 }
 
 @media screen and (min-width: 90rem) {
+  body {
+    font-size: var(--fs-400);
+  }
+
+  p {
+    line-height: var(--lh-600);
+  }
+
+  h1 {
+    font-size: var(--fs-900);
+    line-height: var(--lh-900);
+  }
+
+  .btn {
+    width: 10.438rem;
+    aspect-ratio: 1 / calc(3.5 / 10.438);
+  }
+
+  .cta {
+    width: 10.438rem;
+    aspect-ratio: 1 / calc(3.938 / 10.438);
+  }
+
+  .card h3 {
+    font-size: var(--fs-600);
+  }
+
+  .card p {
+    margin: 1.5rem 0 1.5rem;
+  }
+
   .wrapper {
     padding: 1.5rem 10.313rem 8.758rem;
   }
