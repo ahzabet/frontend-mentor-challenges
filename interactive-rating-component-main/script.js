@@ -31,6 +31,6 @@ function onSubmit(event) {
 
   card.style.paddingTop = "2.813rem";
   submit_pre.classList.add("d-none");
-  rating_feedback.textContent = "You selected " + rating + " out of 5";
+  rating_feedback.textContent = `You selected ${rating} out of 5`;
   submit_post.classList.remove("d-none");
 }
